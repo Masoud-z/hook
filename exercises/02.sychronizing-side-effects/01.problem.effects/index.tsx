@@ -3,13 +3,19 @@ import * as ReactDOM from 'react-dom/client'
 import { generateGradient, getMatchingPosts } from '#shared/blog-posts'
 import { setSearchParams } from '#shared/utils'
 
+function getQueryParam() {
+	const params = new URLSearchParams(window.location.search)
+	return params.get('query') ?? ''
+}
+
 function App() {
 	// NOTE: this will not work with server rendering, but in a real app you can
 	// use react-router's useSearchParams instead
-	const params = new URLSearchParams(window.location.search)
+
 	// 🐨 create a function called getQueryParam that returns the query param
 	// (and falls back to an empty string)
-	const [query, setQuery] = useState(params.get('query') ?? '')
+
+	const [query, setQuery] = useState(getQueryParam)
 
 	const words = query.split(' ')
 

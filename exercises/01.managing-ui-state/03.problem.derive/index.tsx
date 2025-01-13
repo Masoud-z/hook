@@ -36,6 +36,7 @@ function App() {
 						<input
 							type="checkbox"
 							// 🐨 control the checked state of this checkbox by setting the checked prop
+							checked={query.includes('dog')}
 							onChange={e => handleCheck('dog', e.currentTarget.checked)}
 						/>{' '}
 						🐶 dog
@@ -44,6 +45,7 @@ function App() {
 						<input
 							type="checkbox"
 							// 🐨 control the checked state of this checkbox by setting the checked prop
+							checked={query.includes('cat')}
 							onChange={e => handleCheck('cat', e.currentTarget.checked)}
 						/>{' '}
 						🐱 cat
@@ -52,6 +54,7 @@ function App() {
 						<input
 							type="checkbox"
 							// 🐨 control the checked state of this checkbox by setting the checked prop
+							checked={query.includes('caterpillar')}
 							onChange={e =>
 								handleCheck('caterpillar', e.currentTarget.checked)
 							}
